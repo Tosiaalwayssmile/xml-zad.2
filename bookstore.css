@@ -1,0 +1,449 @@
+﻿bookstore {
+    margin: 0px;
+    padding: 4px 3px 4px 3px;
+    background-color: #fff;
+    color: #000;
+    font-size: 10pt;
+    font-family: "DejaVu Sans", sans-serif;
+}
+
+header {
+    display: block;
+    border-style: double;
+    border-width: 5px;
+    border-radius: 2ex;
+    padding-left: 10px;
+    font-size: 150%;
+    font-family: "DejaVu Serif", serif;
+}
+
+    header > * {
+        display: block;
+    }
+
+    header > university {
+        font-weight: bold;
+        text-decoration: underline;
+        padding-bottom: 1px;
+        font-size: 110%;
+    }
+
+    header > faculty:before {
+        content: "Wydział: ";
+        font-weight: normal;
+        font-size: 90%;
+    }
+
+    header > faculty {
+        font-weight: normal;
+        font-size: 100%;
+    }
+
+    header > location, header > data {
+        display: inline;
+        font-style: italic;
+        font-size: 90%;
+    }
+
+        header > location:after {
+            content: ", ";
+        }
+
+        header > data:before {
+            content: "dnia ";
+        }
+
+        header > data:after {
+            content: attr(day) " " attr(month) " " attr(year);
+        }
+
+    header > authors:before {
+        content: "Autorzy: ";
+        display: block;
+        margin-top: 1ex;
+        margin-bottom: 1ex;
+    }
+
+    header > authors {
+        margin-left: 1em; /* em Wielkość em to po prostu rozmiar czcionki. Dla elementu, którego czcionka wynosi 2 cale, 1 em oznacza 2 cale.*/
+    }
+
+    header author {
+        display: list-item;
+        list-style-position: inside;
+        margin-bottom: 3ex; /* Jej przeznaczeniem jest wyrażanie relacji z "wysokością x" danej czcionki. 
+            Wysokość x (ang. x-height) to wysokość małych liter alfabetu takich jak a, c, m, czy o (czyli liter bez wydłużeń dolnych). 
+            Czcionki, które mają taki sam rozmiar (i taki sam em) mogą się znacznie różnić wielkością małych liter. .*/
+    }
+
+        header author > surname:after {
+            content: ", ";
+            font-size: 80%;
+        }
+
+        header author > album:before {
+            content: "nr indeksu: ";
+        }
+
+        header author > album {
+            font-size: 85%;
+        }
+
+        header author > field_of_study, header author > specialty, header author > year {
+            display: list-item;
+            margin-left: 2em;
+            list-style-type: none;
+            font-size: 85%;
+        }
+
+            header author > field_of_study:before, specialty:before, year:before {
+                display: inline-block;
+                width: 8em;
+                font-style: italic;
+            }
+
+            header author > field_of_study:before {
+                content: "Kierunek: ";
+            }
+
+            header author > specialty:before {
+                content: "Specjalizacja: ";
+            }
+
+            header author > year:before {
+                content: "Rok studiów: ";
+            }
+
+authors_list {
+    display: none;
+}
+
+book_list {
+    display: block;
+    margin-bottom: 10ex;
+    border: solid #000 1px;
+    border-radius: 2ex;
+    -moz-border-radius: 2ex;
+    -webkit-border-radius: 2ex;
+    padding: 1px;
+    min-width: 190ex;
+    background-color: #dff;
+    color: #000;
+}
+
+    book_list:last-child {
+        margin-bottom: 0px;
+    }
+
+title {
+    display: block;
+    margin: 1px;
+    border: solid #000 1px;
+    border-radius: 2ex;
+    -moz-border-radius: 2ex;
+    -webkit-border-radius: 2ex;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+    title:before {
+        content: "Lista książek ";
+        text-transform: uppercase;
+    }
+
+genre:before {
+    content: attr(name);
+    display: block;
+    margin-bottom: 4px;
+    border-top: dashed #000 2px;
+    border-bottom: dashed #000 1px;
+    padding: 1px 0px;
+    width: 100%;
+    height: 2.5ex;
+    text-align: center;
+    background-color: #dfb; /* tlo pola z nazwą gatunku*/
+    color: #000;
+    font-weight: bold;
+    /*text-transform: capitalize;   */
+}
+genre {
+    display: block;
+    margin: 2px 0px 4px 0px;
+    border-bottom: dashed #000 1px;
+    padding-bottom: 5px;
+    background-color: #dfd; /*tlo pola, w ktorym wyswietlane są książki z danego gatunku*/
+    color: #000;
+}
+
+    genre > books {
+        background-color: #efe; /*tlo pola z ksiazka*/
+        color: #000;
+    }
+
+    genre:nth-child(2):before { /*Romans  */
+        background-color: #fec8dc; /* tlo pola z nazwą gatunku*/
+        color: #000;
+    }
+
+    genre:nth-child(2) {
+        background-color: #fee1ec;
+        /* tlo pola, w ktorym wyswietlane są książki z danego gatunku*/
+        color: #000;
+    }
+
+        genre:nth-child(2) > books {
+            background-color: #fff0f5; /*tlo pola z ksiazka*/
+            color: #000;
+        }
+
+    genre:nth-child(3):before {
+        background-color: #72cff8; /* tlo pola z nazwą gatunku*/
+        color: #000;
+    }
+
+    genre:nth-child(3) {
+        background-color: #a8e1fa; /* tlo pola, w ktorym wyswietlane są książki z danego gatunku*/
+        color: #000;
+    }
+
+        genre:nth-child(3) > books {
+            background-color: #d3f0fd; /*tlo pola z ksiazka*/
+            color: #000;
+        }
+
+    genre:nth-child(4):before {
+        background-color: #faf897; /* tlo pola z nazwą gatunku   pomarancz*/
+        color: #000;
+    }
+
+    genre:nth-child(4) {
+        background-color: #fcfbc0; /* tlo pola, w ktorym wyswietlane są książki z danego gatunku*/
+        color: #000;
+    }
+
+        genre:nth-child(4) > books {
+            background-color: #fdfcd8; /*tlo pola z ksiazka*/
+            color: #000;
+        }
+
+    genre:last-child {
+        border-radius: 3ex;
+        -moz-border-radius: 3ex;
+        -webkit-border-radius: 3ex;
+    }
+
+    genre:empty:before {
+        display: none;
+    }
+
+    genre:empty {
+        visibility: hidden;
+    }
+
+    genre:not(:last-child):empty {
+        display: none;
+    }
+
+books:before {
+    display: inline-block;
+    float: left;
+    padding: 2px;
+}
+
+books:hover::before {
+    opacity: 0.7;
+    transition: .5s ease;
+}
+books[cover="cmętarz"]:before {
+    content: url("covers/KingCZ.jpg");
+}
+
+books[cover="to"]:before {
+    content: url("covers/to.jpg");
+}
+
+
+books[cover="outsider"]:before {
+    content: url("covers/outsider.jpg");
+}
+
+books[cover="infekcja"]:before {
+    content: url("covers/infekcja.jpg");
+}
+
+books[cover="carrie"]:before {
+    content: url("covers/carrie.jpg");
+}
+
+books[cover="cena"]:before {
+    content: url("covers/cena.jpg");
+}
+
+books[cover="piękno"]:before {
+    content: url("covers/piękno.jpg");
+}
+
+books[cover="haker"]:before {
+    content: url("covers/haker.jpg");
+}
+
+books[cover="tajemnice"]:before {
+    content: url("covers/tajemnice.jpg");
+}
+
+books[cover="birthday"]:before {
+    content: url("covers/birthday.jpg");
+}
+
+books[cover="neverworld"]:before {
+    content: url("covers/neverworld.jpg");
+}
+
+books[cover="pozwól"]:before {
+    content: url("covers/pozwól.jpg");
+}
+
+books[cover="ogien"]:before {
+    content: url("covers/ogien.jpg");
+}
+
+books[cover="saveme"]:before {
+    content: url("covers/saveme.jpg");
+}
+
+books[cover="las"]:before {
+    content: url("covers/las.jpg");
+}
+
+books[cover="becoming"]:before {
+    content: url("covers/becoming.jpg");
+}
+
+books[cover="pełnia"]:before {
+    content: url("covers/pełnia.jpg");
+}
+
+books[cover="skazany"]:before {
+    content: url("covers/skazany.jpg");
+}
+
+books[cover="byli"]:before {
+    content: url("covers/byli.jpg");
+}
+
+books[cover="tata"]:before {
+    content: url("covers/tata.jpg");
+}
+
+books {
+    display: inline-block;
+    outline: solid #000 1px;
+    width: 18%;
+    height: 25ex;
+}
+
+    books > book_title {
+        display: block;
+        font-size: 90%;
+        font-weight: bold;
+        margin-left: 1px;
+    }
+    books > book_title:hover {
+        color: coral;
+        transition: background-color .5s;
+    }
+
+    books > price {
+        display: inline-block;
+        clear: right;
+        float: right;
+        margin-right: 5px;
+        margin-top: 52px;
+        padding: 5px;
+        outline: solid #000 2px;
+        font-weight: bold;
+        font-size: 120%;
+        color: red;
+    }
+
+        books > price:after {
+            content: "zł";
+        }
+
+    books > book_author {
+        float: left;
+        margin-left: 1px;
+        font-size: 80%;
+    }
+        books > book_author:hover {
+            color: coral;
+            transition: background-color .5s;
+        }
+
+    books > release_date:before {
+        content: "Data wydania: ";
+        font-weight: normal;
+    }
+
+    books > release_date {
+        margin-top: 10px;
+        float: left;
+        font-size: 80%;
+    }
+
+    books > covertype:before {
+        content: "Okładka: ";
+        font-weight: normal;
+    }
+
+    books > covertype {
+        display: inline-block;
+        font-size: 80%;
+    }
+ 
+
+books > pages:before {
+    content: "Liczba stron: ";
+    font-weight: normal;
+}
+
+    books > pages {
+        display: inline-block;
+        font-size: 80%;
+    }
+
+    books > ISBN:before {
+        content: "ISBN: ";
+        font-weight: normal;
+    }
+
+    books > ISBN {
+        display: inline-block;
+        font-size: 80%;
+    }
+
+    books:last-child {
+        margin-bottom: 0px;
+    }
+
+    books[blok="1"] {
+        margin-left: 25px;
+    }
+
+    books[blok="2"] {
+        margin-left: 20px;
+    }
+
+    books[blok="3"] {
+        margin-left: 20px;
+    }
+
+    books[blok="4"] {
+        margin-left: 20px;
+    }
+
+    books[blok="5"] {
+        margin-left: 20px;
+    }
