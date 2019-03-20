@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="./bookstore.css" type="text/css"?>
- [
-<!ENTITY M "miękka">
-<!ENTITY T "twarda">
-] >
-<bookstore>
-  <!-- Tu się będzie działo :) -->
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+<bookstore	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="bookstore.xsd"
+		xmlns:cz="http://czas.example.com" xsi:schemaLocation="http://czas.example.com czas.xsd">
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+  
   <header>
     <university>Politechnika Łódzka</university>
     <faculty>FTIMS</faculty>
