@@ -1,0 +1,117 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bookstore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="university"/>
+              <xs:element type="xs:string" name="faculty"/>
+              <xs:element type="xs:string" name="location"/>
+              <xs:element name="data">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:byte" name="day"/>
+                      <xs:attribute type="xs:string" name="month"/>
+                      <xs:attribute type="xs:short" name="year"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:string" name="surname"/>
+                          <xs:element type="xs:int" name="album"/>
+                          <xs:element type="xs:string" name="field_of_study"/>
+                          <xs:element type="xs:string" name="specialty"/>
+                          <xs:element type="xs:string" name="year"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="authors_list">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="authors_definition" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="surname" use="optional"/>
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="country" use="optional"/>
+                      <xs:attribute type="xs:date" name="date_of_birth" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="title"/>
+        <xs:element name="book_list">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="genre" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>******************************************************  HORRORY ****************************  ******************************************************  ROMANSE ****************************  ******************************************************  DLA MŁODZIEŻY ****************************  ******************************************************  Biografie ****************************</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="books" maxOccurs="unbounded" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>*******************  1 ****************************  *******************  2 ****************************  *******************  3 ****************************  *******************  4 ****************************  *******************  5 ****************************  *******************  2 ****************************  *******************  3 ****************************  *******************  4 ****************************  *******************  5 ****************************  *******************  2 ****************************  *******************  3 ****************************  *******************  4 ****************************  *******************  5 ****************************  *******************  2 ****************************  *******************  3 ****************************  *******************  4 ****************************  *******************  5 ****************************</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="book_title"/>
+                          <xs:element name="book_author">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="name"/>
+                                <xs:element type="xs:string" name="surname"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="who" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:date" name="release_date"/>
+                          <xs:element type="xs:short" name="pages"/>
+                          <xs:element type="xs:int" name="ISBN"/>
+                          <xs:element name="price">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="currency" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="blok" use="optional"/>
+                        <xs:attribute type="xs:string" name="cover" use="optional"/>
+                        <xs:attribute type="xs:string" name="genretype" use="optional"/>
+                        <xs:attribute type="xs:string" name="covertype" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
