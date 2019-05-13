@@ -2,300 +2,300 @@
 <?xml-stylesheet href="./bookstore.css" type="text/css"?>
 <bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:noNamespaceSchemaLocation="bookstore.xsd">
- <header>
-		<university>Politechnika Łódzka</university>
-		<faculty>FTIMS</faculty>
-		<location>Łódź</location>
-		<date day="04" month="III" year="2019"/>
-		<authors>
-			<author>
-				<name>Anna</name>
-				<surname>Kowalska</surname>
-				<album>210230</album>
-				<field_of_study>informatyka</field_of_study>
-				<specialty>GKM</specialty>
-				<year>III</year>
-			</author>
-			<author>
-				<name>Antonina</name>
-				<surname>Matuszek</surname>
-				<album>210270</album>
-				<field_of_study>informatyka</field_of_study>
-				<specialty>GKM</specialty>
-				<year>III</year>
-			</author>
-		</authors>
-	</header>
-    <ai:authors_list xmlns:ai="http://authors-info.example.com" 
-                           xsi:schemaLocation="http://authors-info.example.com authors-info.xsd">
-     <ai:authors_definition name="Stephen" surname="King" id="SK0" country="Stany Zjednoczone" date_of_birth="1947-09-21"/>
-      <ai:authors_definition name="Graham" surname="Mastertron" id="GM0" country="Wielka Brytania" date_of_birth="1946-01-16"/>
-      <ai:authors_definition name="Linda" surname="Kage" id="LK0" country="Niemcy" date_of_birth="1960-01-12"/>
-      <ai:authors_definition name="Georgia" surname="Cates" id="GC0" country="Stany Zjednoczone" date_of_birth="1982-03-06"/>
-      <ai:authors_definition name="Penny" surname="Reid" id="PR0" country="Francja" date_of_birth="1980-02-19"/>
-      <ai:authors_definition name="Mia" surname="Sheridan" id="MS0" country="Stany Zjednoczone" date_of_birth="1968-08-01"/>
-      <ai:authors_definition name="Penelope" surname="Douglas" id="PD0" country="Stany Zjednoczone" date_of_birth="1971-10-09"/>
-      <ai:authors_definition name="Marisha" surname="Pessl" id="MP0" country="Niemcy" date_of_birth="1967-11-10"/>
-      <ai:authors_definition name="Abbi" surname="Glines" id="AB0" country="Wielka Brytania" date_of_birth="1961-05-05"/>
-      <ai:authors_definition name="Mona" surname="Kasten" id="MK0" country="Stany Zjednoczone" date_of_birth="1955-07-21"/>
-      <ai:authors_definition name="Sharon" surname="Gosling" id="SG0" country="Stany Zjednoczone" date_of_birth="1990-09-24"/>
-      <ai:authors_definition name="Michelle" surname="Obama" id="MB0" country="Stany Zjednoczone" date_of_birth="1966-12-24"/>
-      <ai:authors_definition name="Agnieszka" surname="Maciąg" id="AM0" country="Polska" date_of_birth="1973-04-21"/>
-      <ai:authors_definition name="Denis" surname="Urubko" id="DU0" country="Polska" date_of_birth="1987-06-26"/>
-      <ai:authors_definition name="Maria" surname="Konwicka" id="MK1" country="Polska" date_of_birth="1956-05-18"/>
-      <ai:authors_definition name="Maciej" surname="Stuhr" id="MS1" country="Polska" date_of_birth="1975-01-23"/>
-      <ai:authors_definition name="Rachel A." surname="Marks" id="RM0" country="Wielka Brytania" date_of_birth="19875-02-13"/>
-	</ai:authors_list>
-  
-	<book_list>
-		<!-- ******************************************************  HORRORY **************************** -->
+  <header>
+    <university>Politechnika Łódzka</university>
+    <faculty>FTIMS</faculty>
+    <location>Łódź</location>
+    <date day="04" month="III" year="2019"/>
+    <authors>
+      <author>
+        <name>Anna</name>
+        <surname>Kowalska</surname>
+        <album>210230</album>
+        <field_of_study>informatyka</field_of_study>
+        <specialty>GKM</specialty>
+        <year>III</year>
+      </author>
+      <author>
+        <name>Antonina</name>
+        <surname>Matuszek</surname>
+        <album>210270</album>
+        <field_of_study>informatyka</field_of_study>
+        <specialty>GKM</specialty>
+        <year>III</year>
+      </author>
+    </authors>
+  </header>
+  <ai:authors_list xmlns:ai="http://authors-info.example.com"
+                         xsi:schemaLocation="http://authors-info.example.com authors-info.xsd">
+    <ai:authors_definition name="Stephen" surname="King" id="SK0" country="Stany Zjednoczone" date_of_birth="1947-09-21"/>
+    <ai:authors_definition name="Graham" surname="Mastertron" id="GM0" country="Wielka Brytania" date_of_birth="1946-01-16"/>
+    <ai:authors_definition name="Linda" surname="Kage" id="LK0" country="Niemcy" date_of_birth="1960-01-12"/>
+    <ai:authors_definition name="Georgia" surname="Cates" id="GC0" country="Stany Zjednoczone" date_of_birth="1982-03-06"/>
+    <ai:authors_definition name="Penny" surname="Reid" id="PR0" country="Francja" date_of_birth="1980-02-19"/>
+    <ai:authors_definition name="Mia" surname="Sheridan" id="MS0" country="Stany Zjednoczone" date_of_birth="1968-08-01"/>
+    <ai:authors_definition name="Penelope" surname="Douglas" id="PD0" country="Stany Zjednoczone" date_of_birth="1971-10-09"/>
+    <ai:authors_definition name="Marisha" surname="Pessl" id="MP0" country="Niemcy" date_of_birth="1967-11-10"/>
+    <ai:authors_definition name="Abbi" surname="Glines" id="AB0" country="Wielka Brytania" date_of_birth="1961-05-05"/>
+    <ai:authors_definition name="Mona" surname="Kasten" id="MK0" country="Stany Zjednoczone" date_of_birth="1955-07-21"/>
+    <ai:authors_definition name="Sharon" surname="Gosling" id="SG0" country="Stany Zjednoczone" date_of_birth="1990-09-24"/>
+    <ai:authors_definition name="Michelle" surname="Obama" id="MB0" country="Stany Zjednoczone" date_of_birth="1966-12-24"/>
+    <ai:authors_definition name="Agnieszka" surname="Maciąg" id="AM0" country="Polska" date_of_birth="1973-04-21"/>
+    <ai:authors_definition name="Denis" surname="Urubko" id="DU0" country="Polska" date_of_birth="1987-06-26"/>
+    <ai:authors_definition name="Maria" surname="Konwicka" id="MK1" country="Polska" date_of_birth="1956-05-18"/>
+    <ai:authors_definition name="Maciej" surname="Stuhr" id="MS1" country="Polska" date_of_birth="1975-01-23"/>
+    <ai:authors_definition name="Rachel" surname="Marks" id="RM0" country="Wielka Brytania" date_of_birth="19875-02-13"/>
+  </ai:authors_list>
 
-			<!-- *******************  1 **************************** -->
-			<books blok="1" cover="cmętarz" genretype="Horror" covertype="miękka">
-				<book_title>Cmętarz zwieżąt</book_title>
-				<book_author who="SK0">
-					<name>Stephen</name>
-					<surname>King</surname>
-				</book_author>
-				<release_date>2009-05-12</release_date>
-				<pages>276</pages>
-				<ISBN>61804036</ISBN>
-				<price currency="PLN">26.99</price>
-			</books>
-			<!-- *******************  2 **************************** -->
-			<books blok="2" cover="to" genretype="Horror" covertype="twarda">
-				<book_title>To</book_title>
-				<book_author who="SK0">
-					<name>Stephen</name>
-					<surname>King</surname>
-				</book_author>
-				<release_date>2017-08-30</release_date>
-				<pages>843</pages>
-				<ISBN>22284983</ISBN>
-				<price currency="GBP">32.13</price>
-			</books>
-			<!-- *******************  3 **************************** -->
-			<books blok="3" cover="outsider" genretype="Horror" covertype="miękka">
-				<book_title>Outsider</book_title>
-				<book_author who="SK0">
-					<name>Stephen</name>
-					<surname>King</surname>
-				</book_author>
-				<release_date>2018-06-05</release_date>
-				<pages>544</pages>
-				<ISBN>25981131</ISBN>
-				<price currency="GBP">31.50</price>
-			</books>
-			<!-- *******************  4 **************************** -->
-			<books blok="4" cover="infekcja" genretype="Horror" covertype="miękka">
-				<book_title>Infekcja</book_title>
-				<book_author who="GM0">
-					<name>Graham</name>
-					<surname>Mastertron</surname>
-				</book_author>
-				<release_date>2019-01-22</release_date>
-				<pages>332</pages>
-				<ISBN>26365077</ISBN>
-				<price currency="EUR">28.72</price>
-			</books>
-			<!-- *******************  5 **************************** -->
-			<books blok="5" cover="carrie" genretype="Horror" covertype="miękka">
-				<book_title>Carrie</book_title>
-				<book_author who="SK0">
-					<name>Stephen</name>
-					<surname>King</surname>
-				</book_author>
-				<release_date>2018-12-03</release_date>
-				<pages>235</pages>
-				<ISBN>13607739</ISBN>
-				<price currency="PLN">14.49</price>
-			</books>
+  <book_list>
+    <!-- ******************************************************  HORRORY **************************** -->
 
-		<!-- ******************************************************  ROMANSE **************************** -->
+    <!-- *******************  1 **************************** -->
+    <books cover="cmętarz" genretype="Horror" covertype="miękka">
+      <book_title>Cmętarz zwieżąt</book_title>
+      <book_author who="SK0">
+        <name>Stephen</name>
+        <surname>King</surname>
+      </book_author>
+      <release_date>2009-05-12</release_date>
+      <pages>276</pages>
+      <ISBN>61804036</ISBN>
+      <price value="26.99" currency="PLN"/>
+    </books>
+    <!-- *******************  2 **************************** -->
+    <books cover="to" genretype="Horror" covertype="twarda">
+      <book_title>To</book_title>
+      <book_author who="SK0">
+        <name>Stephen</name>
+        <surname>King</surname>
+      </book_author>
+      <release_date>2017-08-30</release_date>
+      <pages>843</pages>
+      <ISBN>22284983</ISBN>
+      <price value="32.13" currency="GBP"/>
+    </books>
+    <!-- *******************  3 **************************** -->
+    <books cover="outsider" genretype="Horror" covertype="miękka">
+      <book_title>Outsider</book_title>
+      <book_author who="SK0">
+        <name>Stephen</name>
+        <surname>King</surname>
+      </book_author>
+      <release_date>2018-06-05</release_date>
+      <pages>544</pages>
+      <ISBN>25981131</ISBN>
+      <price value="31.50" currency="GBP"/>
+    </books>
+    <!-- *******************  4 **************************** -->
+    <books cover="infekcja" genretype="Horror" covertype="miękka">
+      <book_title>Infekcja</book_title>
+      <book_author who="GM0">
+        <name>Graham</name>
+        <surname>Mastertron</surname>
+      </book_author>
+      <release_date>2019-01-22</release_date>
+      <pages>332</pages>
+      <ISBN>26365077</ISBN>
+      <price value="28.72" currency="EUR"/>
+    </books>
+    <!-- *******************  5 **************************** -->
+    <books cover="carrie" genretype="Horror" covertype="miękka">
+      <book_title>Carrie</book_title>
+      <book_author who="SK0">
+        <name>Stephen</name>
+        <surname>King</surname>
+      </book_author>
+      <release_date>2018-12-03</release_date>
+      <pages>235</pages>
+      <ISBN>13607739</ISBN>
+      <price value="14.49" currency="PLN"/>
+    </books>
 
-			<books blok="1" cover="cena" genretype="Romans" covertype="miękka">
-				<book_title>Cena pocałunku</book_title>
-				<book_author who="LK0">
-					<name>Linda</name>
-					<surname>Kage</surname>
-				</book_author>
-				<release_date>2019-03-13</release_date>
-				<pages>315</pages>
-				<ISBN>31407939</ISBN>
-				<price currency="EUR">28.99</price>
-			</books>
-			<!-- *******************  2 **************************** -->
-			<books blok="2" cover="piękno" genretype="Romans" covertype="miękka">
-				<book_title>Piękno oddania</book_title>
-				<book_author who="GC0">
-					<name>Georgia</name>
-					<surname>Cates</surname>
-				</book_author>
-				<release_date>2019-04-24</release_date>
-				<pages>269</pages>
-				<ISBN>31546294</ISBN>
-				<price currency="PLN">29.99</price>
-			</books>
-			<!-- *******************  3 **************************** -->
-			<books blok="3" cover="haker" genretype="Romans" covertype="miękka">
-				<book_title>Haker i dziewczyna</book_title>
-				<book_author who="PR0">
-					<name>Penny</name>
-					<surname>Reid</surname>
-				</book_author>
-				<release_date>2019-02-27</release_date>
-				<pages>288</pages>
-				<ISBN>31476348</ISBN>
-				<price currency="PLN">27.99</price>
-			</books>
-			<!-- *******************  4 **************************** -->
-			<books blok="4" cover="tajemnice" genretype="Romans" covertype="miękka">
-				<book_title>Bez tajemnic</book_title>
-				<book_author who="MS0">
-					<name>Mia</name>
-					<surname>Sheridan</surname>
-				</book_author>
-				<release_date>2019-01-16</release_date>
-				<pages>366</pages>
-				<ISBN>30839991</ISBN>
-				<price currency="EUR">31.43</price>
-			</books>
-			<!-- *******************  5 **************************** -->
-			<books blok="5" cover="birthday" genretype="Romans" covertype="miękka">
-				<book_title>Birthday Girl</book_title>
-				<book_author who="PD0">
-					<name>Penelope</name>
-					<surname>Douglas</surname>
-				</book_author>
-				<release_date>2019-01-09</release_date>
-				<pages>256</pages>
-				<ISBN>30759022</ISBN>
-				<price currency="PLN">30.73</price>
-			</books>
+    <!-- ******************************************************  ROMANSE **************************** -->
 
-		<!-- ******************************************************  DLA MŁODZIEŻY **************************** -->
+    <books cover="cena" genretype="Romans" covertype="miękka">
+      <book_title>Cena pocałunku</book_title>
+      <book_author who="LK0">
+        <name>Linda</name>
+        <surname>Kage</surname>
+      </book_author>
+      <release_date>2019-03-13</release_date>
+      <pages>315</pages>
+      <ISBN>31407939</ISBN>
+      <price value="28.99" currency="EUR"/>
+    </books>
+    <!-- *******************  2 **************************** -->
+    <books cover="piękno" genretype="Romans" covertype="miękka">
+      <book_title>Piękno oddania</book_title>
+      <book_author who="GC0">
+        <name>Georgia</name>
+        <surname>Cates</surname>
+      </book_author>
+      <release_date>2019-04-24</release_date>
+      <pages>269</pages>
+      <ISBN>31546294</ISBN>
+      <price value="29.99" currency="PLN"/>
+    </books>
+    <!-- *******************  3 **************************** -->
+    <books cover="haker" genretype="Romans" covertype="miękka">
+      <book_title>Haker i dziewczyna</book_title>
+      <book_author who="PR0">
+        <name>Penny</name>
+        <surname>Reid</surname>
+      </book_author>
+      <release_date>2019-02-27</release_date>
+      <pages>288</pages>
+      <ISBN>31476348</ISBN>
+      <price value="27.99" currency="PLN"/>
+    </books>
+    <!-- *******************  4 **************************** -->
+    <books cover="tajemnice" genretype="Romans" covertype="miękka">
+      <book_title>Bez tajemnic</book_title>
+      <book_author who="MS0">
+        <name>Mia</name>
+        <surname>Sheridan</surname>
+      </book_author>
+      <release_date>2019-01-16</release_date>
+      <pages>366</pages>
+      <ISBN>30839991</ISBN>
+      <price value="31.43" currency="EUR"/>
+    </books>
+    <!-- *******************  5 **************************** -->
+    <books cover="birthday" genretype="Romans" covertype="miękka">
+      <book_title>Birthday Girl</book_title>
+      <book_author who="PD0">
+        <name>Penelope</name>
+        <surname>Douglas</surname>
+      </book_author>
+      <release_date>2019-01-09</release_date>
+      <pages>256</pages>
+      <ISBN>30759022</ISBN>
+      <price value="30.73" currency="PLN"/>
+    </books>
 
-			<books blok="1" cover="neverworld" genretype="Młodzieżowe" covertype="miękka">
-				<book_title>Neverworld Wake</book_title>
-				<book_author who="MP0">
-					<name>Marisha</name>
-					<surname>Pessl</surname>
-				</book_author>
-				<release_date>2019-01-16</release_date>
-				<pages>444</pages>
-				<ISBN>30859401</ISBN>
-				<price currency="PLN">26.54</price>
-			</books>
-			<!-- *******************  2 **************************** -->
-			<books blok="2" cover="pozwól" genretype="Młodzieżowe" covertype="miękka">
-				<book_title>Pozwól się kochać</book_title>
-				<book_author who="AB0">
-					<name>Abbi</name>
-					<surname>Glines</surname>
-				</book_author>
-				<release_date>2019-01-23</release_date>
-				<pages>345</pages>
-				<ISBN>31189415</ISBN>
-				<price currency="PLN">23.94</price>
-			</books>
-			<!-- *******************  3 **************************** -->
-			<books blok="3" cover="ogien" genretype="Młodzieżowe" covertype="miękka">
-				<book_title>Ogień i kość</book_title>
-				<book_author who="RM0">
-					<name>Rachel A.</name>
-					<surname>Marks</surname>
-				</book_author>
-				<release_date>2015-08-03</release_date>
-				<pages>366</pages>
-				<ISBN>17934015</ISBN>
-				<price currency="PLN">25.06</price>
-			</books>
-			<!-- *******************  4 **************************** -->
-			<books blok="4" cover="saveme" genretype="Młodzieżowe" covertype="twarda">
-				<book_title>Save Me</book_title>
-				<book_author who="MK0">
-					<name>Mona</name>
-					<surname>Kasten</surname>
-				</book_author>
-				<release_date>2019-02-13</release_date>
-				<pages>275</pages>
-				<ISBN>30859494</ISBN>
-				<price currency="PLN">27.93</price>
-			</books>
-			<!-- *******************  5 **************************** -->
-			<books blok="5" cover="las" genretype="Młodzieżowe" covertype="miękka">
-				<book_title>Las</book_title>
-				<book_author who="SG0">
-					<name>Sharon</name>
-					<surname>Gosling</surname>
-				</book_author>
-				<release_date>2019-02-13</release_date>
-				<pages>399</pages>
-				<ISBN>31067836</ISBN>
-				<price currency="PLN">26.99</price>
-			</books>
+    <!-- ******************************************************  DLA MŁODZIEŻY **************************** -->
 
-		<!-- ******************************************************  Biografie **************************** -->
+    <books cover="neverworld" genretype="Młodzieżowe" covertype="miękka">
+      <book_title>Neverworld Wake</book_title>
+      <book_author who="MP0">
+        <name>Marisha</name>
+        <surname>Pessl</surname>
+      </book_author>
+      <release_date>2019-01-16</release_date>
+      <pages>444</pages>
+      <ISBN>30859401</ISBN>
+      <price value="26.54" currency="PLN"/>
+    </books>
+    <!-- *******************  2 **************************** -->
+    <books cover="pozwól" genretype="Młodzieżowe" covertype="miękka">
+      <book_title>Pozwól się kochać</book_title>
+      <book_author who="AB0">
+        <name>Abbi</name>
+        <surname>Glines</surname>
+      </book_author>
+      <release_date>2019-01-23</release_date>
+      <pages>345</pages>
+      <ISBN>31189415</ISBN>
+      <price value="23.94" currency="PLN"/>
+    </books>
+    <!-- *******************  3 **************************** -->
+    <books cover="ogien" genretype="Młodzieżowe" covertype="miękka">
+      <book_title>Ogień i kość</book_title>
+      <book_author who="RM0">
+        <name>Rachel</name>
+        <surname>Marks</surname>
+      </book_author>
+      <release_date>2015-08-03</release_date>
+      <pages>366</pages>
+      <ISBN>17934015</ISBN>
+      <price value="25.06" currency="PLN"/>
+    </books>
+    <!-- *******************  4 **************************** -->
+    <books cover="saveme" genretype="Młodzieżowe" covertype="twarda">
+      <book_title>Save Me</book_title>
+      <book_author who="MK0">
+        <name>Mona</name>
+        <surname>Kasten</surname>
+      </book_author>
+      <release_date>2019-02-13</release_date>
+      <pages>275</pages>
+      <ISBN>30859494</ISBN>
+      <price value="27.93" currency="PLN="/>
+    </books>
+    <!-- *******************  5 **************************** -->
+    <books cover="las" genretype="Młodzieżowe" covertype="miękka">
+      <book_title>Las</book_title>
+      <book_author who="SG0">
+        <name>Sharon</name>
+        <surname>Gosling</surname>
+      </book_author>
+      <release_date>2019-02-13</release_date>
+      <pages>399</pages>
+      <ISBN>31067836</ISBN>
+      <price value="26.99" currency="PLN"/>
+    </books>
 
-			<books blok="1" cover="becoming" genretype="Biografie" covertype="twarda">
-				<book_title>Becoming</book_title>
-				<book_author who="MB0">
-					<name>Michelle</name>
-					<surname>Obama</surname>
-				</book_author>
-				<release_date>2019-02-13</release_date>
-				<pages>170</pages>
-				<ISBN>25671186</ISBN>
-				<price currency="PLN">37.49</price>
-			</books>
-			<!-- *******************  2 **************************** -->
-			<books blok="2" cover="pełnia" genretype="Biografie" covertype="miękka">
-				<book_title>Pełnia życia</book_title>
-				<book_author who="AM0">
-					<name>Agnieszka</name>
-					<surname>Maciąg</surname>
-				</book_author>
-				<release_date>2016-10-26</release_date>
-				<pages>214</pages>
-				<ISBN>20012991</ISBN>
-				<price currency="PLN">34.93</price>
-			</books>
-			<!-- *******************  3 **************************** -->
-			<books blok="3" cover="skazany" genretype="Biografie" covertype="miękka">
-				<book_title>Skazany na góry</book_title>
-				<book_author who="DU0">
-					<name>Denis</name>
-					<surname>Urubko</surname>
-				</book_author>
-				<release_date>2018-04-04</release_date>
-				<pages>245</pages>
-				<ISBN>25553895</ISBN>
-				<price currency="PLN">35.99</price>
-			</books>
-			<!-- *******************  4 **************************** -->
-			<books blok="4" cover="byli" genretype="Biografie" covertype="twarda">
-				<book_title>Byli sobie raz</book_title>
-				<book_author who="MK1">
-					<name>Maria</name>
-					<surname>	Konwicka</surname>
-				</book_author>
-				<release_date>2019-04-24</release_date>
-				<pages>361</pages>
-				<ISBN>31513340</ISBN>
-				<price currency="PLN">39.99</price>
-			</books>
-			<!-- *******************  5 **************************** -->
-			<books blok="5" cover="tata" genretype="Biografie" covertype="miękka">
-				<book_title>Tata Tadzika</book_title>
-				<book_author who="MS1">
-					<name>Maciej</name>
-					<surname>Stuhr</surname>
-				</book_author>
-				<release_date>2018-10-17</release_date>
-				<pages>270</pages>
-				<ISBN>26991276</ISBN>
-				<price currency="PLN">32.99</price>
-			</books>
+    <!-- ******************************************************  Biografie **************************** -->
 
-	</book_list>
+    <books cover="becoming" genretype="Biografie" covertype="twarda">
+      <book_title>Becoming</book_title>
+      <book_author who="MB0">
+        <name>Michelle</name>
+        <surname>Obama</surname>
+      </book_author>
+      <release_date>2019-02-13</release_date>
+      <pages>170</pages>
+      <ISBN>25671186</ISBN>
+      <price value="37.49" currency="PLN"/>
+    </books>
+    <!-- *******************  2 **************************** -->
+    <books cover="pełnia" genretype="Biografie" covertype="miękka">
+      <book_title>Pełnia życia</book_title>
+      <book_author who="AM0">
+        <name>Agnieszka</name>
+        <surname>Maciąg</surname>
+      </book_author>
+      <release_date>2016-10-26</release_date>
+      <pages>214</pages>
+      <ISBN>20012991</ISBN>
+      <price value="34.93" currency="PLN"/>
+    </books>
+    <!-- *******************  3 **************************** -->
+    <books cover="skazany" genretype="Biografie" covertype="miękka">
+      <book_title>Skazany na góry</book_title>
+      <book_author who="DU0">
+        <name>Denis</name>
+        <surname>Urubko</surname>
+      </book_author>
+      <release_date>2018-04-04</release_date>
+      <pages>245</pages>
+      <ISBN>25553895</ISBN>
+      <price value="35.99" currency="PLN"/>
+    </books>
+    <!-- *******************  4 **************************** -->
+    <books cover="byli" genretype="Biografie" covertype="twarda">
+      <book_title>Byli sobie raz</book_title>
+      <book_author who="MK1">
+        <name>Maria</name>
+        <surname>	Konwicka</surname>
+      </book_author>
+      <release_date>2019-04-24</release_date>
+      <pages>361</pages>
+      <ISBN>31513340</ISBN>
+      <price value="39.99" currency="PLN"/>
+    </books>
+    <!-- *******************  5 **************************** -->
+    <books cover="tata" genretype="Biografie" covertype="miękka">
+      <book_title>Tata Tadzika</book_title>
+      <book_author who="MS1">
+        <name>Maciej</name>
+        <surname>Stuhr</surname>
+      </book_author>
+      <release_date>2018-10-17</release_date>
+      <pages>270</pages>
+      <ISBN>26991276</ISBN>
+      <price value="32.99" currency="PLN"/>
+    </books>
+
+  </book_list>
 </bookstore>

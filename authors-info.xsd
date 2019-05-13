@@ -3,27 +3,27 @@
 			targetNamespace="http://authors-info.example.com"
 			xmlns:ai="http://authors-info.example.com">
 
-	<element name="authors_list">
-		<complexType>
-			<sequence>
-				<element ref="ai:authors_definition" maxOccurs="unbounded"/>
-			</sequence>
-		</complexType>
-	</element>
+  <element name="authors_list">
+    <complexType>
+      <sequence>
+        <element ref="ai:authors_definition" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
 
-	<element name="authors_definition">
-		<complexType>
-			<attributeGroup ref="ai:authorsInfo"/>
+  <element name="authors_definition">
+    <complexType>
+      <attributeGroup ref="ai:authorsInfo"/>
       <attribute name="id" type="ID" use="required"/>
-		</complexType>
-	</element>
+    </complexType>
+  </element>
 
-	<attributeGroup name="authorsInfo">
-			<attribute name="name" type="NMTOKENS" use="required"/>
-			<attribute name="surname" type="NMTOKENS" use="required"/>
-      <attribute name="country" type="NMTOKENS" use="optional"/>
-      <attribute name="date_of_birth" type="NMTOKEN" use="optional"/>
+  <attributeGroup name="authorsInfo">
+    <attribute name="name" type="NMTOKENS" use="required"/>
+    <attribute name="surname" type="NMTOKENS" use="required"/>
+    <attribute name="country" type="NMTOKENS" use="optional"/>
+    <attribute name="date_of_birth" type="NMTOKEN" use="optional"/>
 
-	</attributeGroup>
+  </attributeGroup>
 
 </schema>
