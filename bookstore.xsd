@@ -64,9 +64,26 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="year" type="xsd:string"/>
-  <xsd:element name="specialty" type="xsd:string"/>
-  <xsd:element name="field_of_study" type="xsd:string"/>
+  <xsd:element name="year">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:NMTOKEN">
+        <xsd:pattern value="I?V|I{1,3}"/>
+     </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  
+  <xsd:element name="specialty">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:NMTOKEN">
+       <xsd:enumeration value="GKM"/>
+       <xsd:enumeration value="SIBD"/>
+       <xsd:enumeration value="IOAD"/>
+       <xsd:enumeration value="TGSK"/>
+       <xsd:enumeration value="SKST"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+   </xsd:element>
+  <xsd:element name="field_of_study" type="xsd:string" fixed="informatyka"/>
   <xsd:element name="album">
     <xsd:simpleType>
       <xsd:restriction base="xsd:positiveInteger">
@@ -75,9 +92,9 @@
     </xsd:simpleType>
   </xsd:element>
 
-  <xsd:element name="university" type="xsd:token"/>
-  <xsd:element name="faculty" type="xsd:token"/>
-  <xsd:element name="location" type="xsd:token"/>
+  <xsd:element name="university" type="xsd:token" fixed="Politechnika Łódzka"/>
+  <xsd:element name="faculty" type="xsd:token" fixed="FTIMS"/>
+  <xsd:element name="location" type="xsd:token" fixed="Łódź"/>
   <xsd:element name="date">
     <xsd:complexType>
       <xsd:attribute name="day" use="required">
@@ -88,7 +105,6 @@
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:attribute>
-
       <xsd:attribute name="month" use="required">
         <xsd:simpleType>
           <xsd:restriction base="xsd:NMTOKEN">
@@ -96,7 +112,6 @@
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:attribute>
-
       <xsd:attribute name="year" type="xsd:gYear" use="required"/>
     </xsd:complexType>
   </xsd:element>
@@ -157,9 +172,13 @@
 
   <xsd:element name="release_date" type="xsd:token"/>
   <xsd:element name="pages" type="xsd:positiveInteger"/>
-  <xsd:element name="ISBN" type="xsd:token"/>
-
-
+  <xsd:element name="ISBN">
+    <xsd:simpleType>
+     <xsd:restriction base="xsd:positiveInteger">
+        <xsd:totalDigits value="8"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+  </xsd:element>
   <xsd:element name="price">
     <xsd:complexType>
       <xsd:attribute name="value" use="required">
