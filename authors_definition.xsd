@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns="http://www.xml.ftims.pl/authors_definition"
+					targetNamespace="http://www.xml.ftims.pl/authors_definition"
+					elementFormDefault="qualified">
+
+  <xsd:element name="authors_definition">
+
+    <xsd:complexType>
+      <xsd:attribute name="id" type="xsd:NCName" use="required"/>
+      <xsd:attribute name="name" type="nameRestriction" use="required"/>
+      <xsd:attribute name="surname" type="nameRestriction" use="required"/>
+      <xsd:attribute name="country" type="xsd:NMTOKENS" use="optional"/>
+      <xsd:attribute name="date_of_birth" type="xsd:NMTOKEN" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  
+    <xsd:simpleType name="nameRestriction">
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*([-|/d /w][A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*)?"/>
+        <xsd:minLength value="3"/>
+        <xsd:maxLength value="25"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  
+
+  
+</xsd:schema>

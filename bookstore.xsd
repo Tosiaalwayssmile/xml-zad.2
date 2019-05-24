@@ -1,251 +1,71 @@
 <!-- edited with XMLSpy v2019 sp2 (x64) (http://www.altova.com) by Antonina Matuszek (Politechnika Łódzka) -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ai="http://authors-info.example.com">
-  <!-- Brak domyślnej przestrzeni nazw -->
-  <xsd:import namespace="http://authors-info.example.com" schemaLocation="authors-info.xsd"/>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:h="http://www.xml.ftims.pl/header"
+            xmlns:ad="http://www.xml.ftims.pl/authors_definition"
+            xmlns:b="http://www.xml.ftims.pl/book"
+           	xmlns="http://www.xml.ftims.pl/"
+            targetNamespace="http://www.xml.ftims.pl/">
+
+  <xsd:import namespace="http://www.xml.ftims.pl/authors_definition" schemaLocation="authors_definition.xsd"/>
+  <xsd:import namespace="http://www.xml.ftims.pl/book" schemaLocation="book.xsd"/>
+  <xsd:import namespace="http://www.xml.ftims.pl/header" schemaLocation="header.xsd"/>
+  
   <xsd:annotation>
     <xsd:documentation xml:lang="pl">
       Programowanie Komunikacji Człowiek-Komputer - zadanie 2
     </xsd:documentation>
   </xsd:annotation>
-  <xsd:element name="bookstore" type="GenresOfBooks">
+  
+  <xsd:element name="bookstore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="h:header" />
 
-    <xsd:key name="authorsInfo">
-      <xsd:selector xpath="ai:authors_list/ai:authors_definition"/>
+        <xsd:element name="authors">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ad:authors_definition" minOccurs="1" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+            
+        <xsd:element name="books">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="b:book" minOccurs="1" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+             
+      </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:unique name="uniqueID">
+      <xsd:selector xpath="authors/ad:authors_definition"/>
+      <xsd:field xpath="@id" />
+    </xsd:unique>
+
+    <xsd:unique name="uniqueBookID">
+      <xsd:selector xpath="books/b:book"/>
+      <xsd:field xpath="@id" />
+    </xsd:unique>
+
+    <xsd:key name="authorID">
+      <xsd:selector xpath="authors/ad:authors_definition"/>
       <xsd:field xpath="@id"/>
     </xsd:key>
 
-    <xsd:keyref name="VerifyAuthorsInfo" refer="authorsInfo">
-      <xsd:selector xpath="bookstore/book_list/books/book_author"/>
-      <xsd:field xpath="@who"/>
+    <xsd:keyref name="idref" refer="authorID">
+      <xsd:selector xpath="books/b:book/b:book_author"/>
+      <xsd:field xpath="@idref"/>
     </xsd:keyref>
-  </xsd:element>
-  <xsd:complexType name="GenresOfBooks">
-    <xsd:sequence>
-      <xsd:element ref="header"/>
-      <xsd:element ref="ai:authors_list"/>
-      <xsd:element ref="book_list" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-  </xsd:complexType>
-
-  <xsd:element name="header">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="university"/>
-        <xsd:element ref="faculty"/>
-        <xsd:element ref="location"/>
-        <xsd:element ref="date"/>
-        <xsd:element ref="authors"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="authors">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="author" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-    <xsd:key name="variousAuthors">
-      <xsd:selector xpath="./author"/>
-      <xsd:field xpath="album"/>
-    </xsd:key>
-  </xsd:element>
-
-  <xsd:element name="author">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="name" minOccurs="1" maxOccurs="unbounded"/>
-        <xsd:element ref="surname" minOccurs="1" maxOccurs="unbounded"/>
-        <xsd:element ref="album"/>
-        <xsd:element ref="field_of_study"/>
-        <xsd:element ref="specialty"/>
-        <xsd:element ref="year"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-  
-  <xsd:element name="year">
-    <xsd:simpleType>
-      <xsd:restriction base="xsd:NMTOKEN">
-        <xsd:pattern value="I?V|I{1,3}"/>
-     </xsd:restriction>
-    </xsd:simpleType>
-  </xsd:element>
-  
-  <xsd:element name="specialty">
-    <xsd:simpleType>
-      <xsd:restriction base="xsd:NMTOKEN">
-       <xsd:enumeration value="GKM"/>
-       <xsd:enumeration value="SIBD"/>
-       <xsd:enumeration value="IOAD"/>
-       <xsd:enumeration value="TGSK"/>
-       <xsd:enumeration value="SKST"/>
-      </xsd:restriction>
-    </xsd:simpleType>
-   </xsd:element>
-  <xsd:element name="field_of_study" type="xsd:string" fixed="informatyka"/>
-  <xsd:element name="album">
-    <xsd:simpleType>
-      <xsd:restriction base="xsd:positiveInteger">
-        <xsd:totalDigits value="6"/>
-      </xsd:restriction>
-    </xsd:simpleType>
-  </xsd:element>
-
-  <xsd:element name="university" type="xsd:token" fixed="Politechnika Łódzka"/>
-  <xsd:element name="faculty" type="xsd:token" fixed="FTIMS"/>
-  <xsd:element name="location" type="xsd:token" fixed="Łódź"/>
-  <xsd:element name="date">
-    <xsd:complexType>
-      <xsd:attribute name="day" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:unsignedByte">
-            <xsd:minInclusive value="1"/>
-            <xsd:maxInclusive value="31"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-      <xsd:attribute name="month" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:NMTOKEN">
-            <xsd:pattern value="I?X|XI{1,2}|I?V|V?I{1,3}"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-      <xsd:attribute name="year" type="xsd:gYear" use="required"/>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="name">
-    <xsd:simpleType>
-      <xsd:restriction base="xsd:string">
-        <xsd:pattern value="[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*(-[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*)?"/>
-        <xsd:minLength value="3"/>
-        <xsd:maxLength value="25"/>
-      </xsd:restriction>
-    </xsd:simpleType>
-  </xsd:element>
-  
-  
-  <xsd:element name="surname">
-  <xsd:simpleType>
-    <xsd:restriction base="xsd:string">
-      <xsd:pattern value="[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*(-[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*)?"/>
-      <xsd:minLength value="3"/>
-      <xsd:maxLength value="25"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-  </xsd:element>
-  
-  <xsd:element name="book_list">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="books" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
 
 
-  <xsd:element name="books">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="book_title"/>
-        <xsd:element ref="book_author" maxOccurs="unbounded"/>
-        <xsd:element ref="release_date"/>
-        <xsd:element ref="pages"/>
-        <xsd:element ref="ISBN"/>
-        <xsd:element ref="price"/>
-      </xsd:sequence>
-      <xsd:attribute name="cover" use="required"/>
-      <xsd:attribute name="genretype" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:NMTOKENS">
-            <xsd:enumeration value="Horror"/>
-            <xsd:enumeration value="Romans"/>
-            <xsd:enumeration value="Młodzieżowe"/>
-            <xsd:enumeration value="Biografie"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-      <xsd:attribute name="covertype" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="miękka"/>
-            <xsd:enumeration value="twarda"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-    </xsd:complexType>
-  </xsd:element>
+    </xsd:element>
 
-  <xsd:element name="book_title" type="xsd:token"/>
-  <xsd:element name="book_author">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="name"/>
-        <xsd:element ref="surname"/>
-      </xsd:sequence>
-      <xsd:attribute name="who" type="xsd:IDREF" use="required"/>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="release_date" type="xsd:token"/>
-  <xsd:element name="pages" type="xsd:positiveInteger"/>
-  <xsd:element name="ISBN">
-    <xsd:simpleType>
-     <xsd:restriction base="xsd:positiveInteger">
-        <xsd:totalDigits value="8"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-  </xsd:element>
-  <xsd:element name="price">
-    <xsd:complexType>
-      <xsd:attribute name="value" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:decimal">
-            <xsd:minExclusive value="0"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-
-      <xsd:attribute name="currency" use="required">
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="PLN"/>
-            <xsd:enumeration value="EUR"/>
-            <xsd:enumeration value="USD"/>
-            <xsd:enumeration value="GBP"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:attribute>
-    </xsd:complexType>
-  </xsd:element>
+ 
+    
 </xsd:schema>
 
-
-<!--
-       <xsd:element name="price">   
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:decimal">
-        <xsd:attribute ref="currency" use="required"/>
-        </xsd:extension>
-         <xsd:restriction base="xsd:decimal">
-         <xsd:minExclusive value="0"/>
-         </xsd:restriction>
-      </xsd:simpleContent>
-    </xsd:complexType>
-  </xsd:element>
-  
-  <xsd:attribute name="currency">
-  <xsd:simpleType>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="PLN"/>
-      <xsd:enumeration value="EUR"/>
-      <xsd:enumeration value="USD"/>
-      <xsd:enumeration value="GBP"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-  </xsd:attribute>
-</xsd:schema>
- -->

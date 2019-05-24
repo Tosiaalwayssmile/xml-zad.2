@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns="http://www.xml.ftims.pl/book"
+					targetNamespace="http://www.xml.ftims.pl/book"
+					elementFormDefault="qualified">
+
+
+  <xsd:element name="book">
+    <xsd:complexType>
+      <xsd:sequence>
+        
+        <xsd:element name="book_title" type="xsd:token"/>
+        
+        <xsd:element name="book_author">
+          <xsd:complexType>
+            <xsd:attribute name="idref" type="xsd:NCName" use="required"/>
+        </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="release_date" type="xsd:token"/>
+        
+        <xsd:element name="pages" type="xsd:positiveInteger"/>
+        
+        <xsd:element name="ISBN">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:positiveInteger">
+              <xsd:totalDigits value="8"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        
+        <xsd:element ref="price"/>
+        
+      </xsd:sequence>
+      
+      <xsd:attribute name="cover" use="required"/>
+      <xsd:attribute name="genretype" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:NMTOKENS">
+            <xsd:enumeration value="Horror"/>
+            <xsd:enumeration value="Romans"/>
+            <xsd:enumeration value="Młodzieżowe"/>
+            <xsd:enumeration value="Biografie"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="covertype" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="miękka"/>
+            <xsd:enumeration value="twarda"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="id" type="xsd:NCName" use="required"/>
+    </xsd:complexType>
+    
+  </xsd:element>
+
+
+  <xsd:element name="price">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="value">
+          <xsd:attribute name="currency" type="currencytype"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="currencytype">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PLN"/>
+      <xsd:enumeration value="EUR"/>
+      <xsd:enumeration value="USD"/>
+      <xsd:enumeration value="GBP"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="value">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  </xsd:schema>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns="http://www.xml.ftims.pl/header"
+					xmlns:h="http://www.xml.ftims.pl/header"
+					targetNamespace="http://www.xml.ftims.pl/header"
+					elementFormDefault="qualified">
+
+  <xsd:element name="header">
+    <xsd:complexType>
+      <xsd:sequence>
+        
+        <xsd:element name="university" type="xsd:token" fixed="Politechnika Łódzka"/>
+        <xsd:element name="faculty" type="xsd:token" fixed="FTIMS"/>
+        <xsd:element name="location" type="xsd:token" fixed="Łódź"/>
+        <xsd:element name="date">
+          <xsd:complexType>
+            <xsd:attribute name="day" use="required">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:unsignedByte">
+                  <xsd:minInclusive value="1"/>
+                  <xsd:maxInclusive value="31"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="month" use="required">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:NMTOKEN">
+                  <xsd:pattern value="I?X|XI{1,2}|I?V|V?I{1,3}"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="year" type="xsd:gYear" use="required"/>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="author" minOccurs="1" maxOccurs="2">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="name" type="nameRestriction"/>
+
+              <xsd:element name="surname" type="nameRestriction"/>
+              
+              <xsd:element name="album">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                    <xsd:totalDigits value="6"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              
+              <xsd:element name="field_of_study" type="xsd:string" fixed="informatyka"/>
+              
+              <xsd:element name="specialty">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:NMTOKEN">
+                    <xsd:enumeration value="GKM"/>
+                    <xsd:enumeration value="SIBD"/>
+                    <xsd:enumeration value="IOAD"/>
+                    <xsd:enumeration value="TGSK"/>
+                    <xsd:enumeration value="SKST"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              
+              <xsd:element name="year">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:NMTOKEN">
+                    <xsd:pattern value="I?V|I{1,3}"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+			       </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+      <xsd:simpleType name="nameRestriction">
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*([-|/d /w][A-ZĄĘOŁŚŻŹĆŃ]([a-ząęółśżźćń])*)?"/>
+        <xsd:minLength value="3"/>
+        <xsd:maxLength value="25"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  
+   </xsd:schema>
